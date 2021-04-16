@@ -1,10 +1,10 @@
 locals {
   scheduled_count = var.enable_scheduled_event ? 1 : 0
   assessment_ruleset = compact([
-    var.ruleset_cis ? "arn:aws:inspector:us-east-1:316112463485:rulespackage/0-rExsr2X8" : "",
-    var.ruleset_cve ? "arn:aws:inspector:us-east-1:316112463485:rulespackage/0-gEjTy7T7" : "",
-    var.ruleset_network_reachability ? "arn:aws:inspector:us-east-1:316112463485:rulespackage/0-PmNV0Tcd" : "",
-    var.ruleset_security_best_practices ? "arn:aws:inspector:us-east-1:316112463485:rulespackage/0-R01qwB5Q" : "",
+    var.ruleset_cis ? "" : "arn:aws:inspector:eu-north-1:453420244670:rulespackage/0-Yn8jlX7f",
+    var.ruleset_cve ? "arn:aws:inspector:eu-north-1:453420244670:rulespackage/0-IgdgIewd" : "",
+    var.ruleset_network_reachability ? "arn:aws:inspector:eu-north-1:453420244670:rulespackage/0-52Sn74uu" : "",
+    var.ruleset_security_best_practices ? "arn:aws:inspector:eu-north-1:453420244670:rulespackage/0-HfBQSbSf" : "",
     ]
   )
 }

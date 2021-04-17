@@ -1,5 +1,5 @@
 module "my-inspector-deployment" {
-  source = "../"
+  source = "../modules/inspector"
   #version                         = "~> 3.0"
   name_prefix                     = "my-inspector"
   enable_scheduled_event          = true

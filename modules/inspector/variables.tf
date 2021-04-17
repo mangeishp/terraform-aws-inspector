@@ -12,6 +12,7 @@ variable "enable_scheduled_event" {
 variable "name_prefix" {
   type        = string
   description = "Prefix for resource names that terraform will create"
+  default     = "msp"
 }
 variable "ruleset_cis" {
   type        = bool

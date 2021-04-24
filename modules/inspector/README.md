@@ -9,10 +9,6 @@ A terraform module to deploy [Amazon Inspector](https://docs.aws.amazon.com/insp
 
 ## Usage
 
-Module version 3.1 supports Terraform 0.13 up to (but not including) 1.0 (which is yet to be released at the). Module version 1.x supports Terraform 0.12.
-
-Note: this module currently does not support the customization of assessment targets. All EC2 instances with the AWS Inspector agent installed will be included on an assessment.
-
 ### Variables
 
 #### Required
@@ -35,54 +31,7 @@ It doesn't take much to get off the ground with this module. All you need to get
 
 ```terraform
 module "my-inspector-deployment" {
-  source      = "USSBA/inspector/aws"
-  version     = "~> 2.0"
+  source      = "../modules/inspector"
   name_prefix = "my-inspector"
 }
 ```
-
-### Complex Example
-
-An example showing a customized schedule and rulesets:
-
-```terraform
-module "my-inspector-deployment" {
-  source                          = "USSBA/inspector/aws"
-  version                         = "~> 3.0"
-  name_prefix                     = "my-inspector"
-  enable_scheduled_event          = true
-  schedule_expression             = "cron(0 14 * * ? *)"
-  ruleset_cve                     = true
-  ruleset_cis                     = false
-  ruleset_security_best_practices = true
-  ruleset_network_reachability    = false
-}
-```
-
-## Contributing
-
-We welcome contributions.
-To contribute please read our [CONTRIBUTING](CONTRIBUTING.md) document.
-
-All contributions are subject to the license and in no way imply compensation for contributions.
-
-### Terraform 0.12
-
-Our code base now exists in Terraform 0.13 and we are halting new features in the Terraform 0.12 major version.  If you wish to make a PR or merge upstream changes back into 0.12, please submit a PR to the `terraform-0.12` branch.
-
-## Code of Conduct
-
-We strive for a welcoming and inclusive environment for all SBA projects.
-
-Please follow this guidelines in all interactions:
-
-* Be Respectful: use welcoming and inclusive language.
-* Assume best intentions: seek to understand other's opinions.
-
-## Security Policy
-
-Please do not submit an issue on GitHub for a security vulnerability.
-Instead, contact the development team through [HQVulnerabilityManagement](mailto:HQVulnerabilityManagement@sba.gov).
-Be sure to include **all** pertinent information.
-
-The agency reserves the right to change this policy at any time.

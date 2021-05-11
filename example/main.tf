@@ -6,7 +6,7 @@ module "my-inspector-deployment" {
   source                          = "../modules/inspector"
   name_prefix                     = "my-inspector"
   enable_scheduled_event          = true
-  schedule_expression             = "cron(0 14 * * ? *)"
+  schedule_expression             = "rate(7 days)"
   ruleset_cve                     = true
   ruleset_cis                     = false
   ruleset_security_best_practices = true

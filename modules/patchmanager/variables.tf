@@ -17,6 +17,6 @@ variable "task" {
   description = "Contains the task details and command"
   default = {
     name   = "commands"
-    values = ["yum update -y; reboot"]
+    values = ["sudo yum update -y; sudo reboot"]
   }
 }

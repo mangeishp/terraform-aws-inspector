@@ -37,5 +37,5 @@ variable "ruleset_security_best_practices" {
 variable "schedule_expression" {
   type        = string
   description = "AWS Schedule Expression: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"
-  default     = "rate(7 days)"
+  default     = "rate(30 days)"
 }
